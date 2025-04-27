@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ndocument.addEventListener('DOMContentLoaded', () => {
     // Verifica se um arquivo foi selecionado, habilita o botão e exibe o nome do arquivo
     document.getElementById('romFile').addEventListener('change', (event) => {
         const processButton = document.getElementById('processButton');
