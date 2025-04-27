@@ -1,0 +1,74 @@
+.database-links {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.database-links a {
+    color: var(--primary-100);
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.database-links a:hover {
+    color: var(--primary-100);
+}
+
+.database-links span {
+    color: var(--color);
+}
+
+.copy-button {
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* .copy-button:hover {
+    background-color: var(--primary-100);
+} */
+
+.hash-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.secundary-container {
+    margin: 20px 0px 0px;
+    padding: 0px 20px 35px;
+    width: 960px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens se ajustem automaticamente se houver mais de uma linha */
+    justify-content: space-evenly; /* Distribui as imagens uniformemente */
+    align-items: center; /* Alinha as imagens verticalmente */
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur( 15px );
+    box-shadow: 0 8px 35px 0 #1f26876e;
+}
+
+.secundary-container a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.secundary-container img {
+    width: 95px;
+    height: 100px; /* Define a altura das imagens */
+    object-fit: contain; /* Ajusta a imagem para que ela se ajuste à área de 100x100 sem distorcer */
+}
+
+

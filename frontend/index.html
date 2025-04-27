@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../frontend/public/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de ROMs</title>
+
+    <link rel="stylesheet" href="../frontend/css/global.css">
+    <link rel="stylesheet" href="../frontend/css/files.css">
+    <link rel="stylesheet" href="../frontend/css/results.css">
+    <link rel="stylesheet" href="../frontend/css/links.css">
+    <link rel="stylesheet" href="../frontend/css/loading.css">
+</head>
+<body>
+    <div class="container">
+        <div class="primary-container">
+            
+            <header class="titles">
+                <h1 class="title">ROMs Verifier</h1>
+                <h2 class="subtitle">Do not use compact files (.zip .7z .chd), they affect the extracted data</h2>
+            </header>
+
+            <section class="file-container">
+                <div class="file-container-left">
+                    <div class="romFile">
+                        <input 
+                            type="file" 
+                            id="romFile" 
+                            accept=".nes,.gb,.smc,.md,.sfc,.gba,.iso,.bin" 
+                            style="display: none;"
+                        >
+                        <label for="romFile" id="customButton">📂 Choose ROM File</label>
+                    </div>
+                </div>
+
+                <div class="file-container-right">
+                    <label for="romFile" id="fileName" class="no-file">No files selected!</label>
+                    <button id="processButton" class="start" disabled>
+                        <p>Start | Process ROM</p>
+                    </button>
+                </div>
+            </section>
+
+            <section class="results-container">
+                <section id="loading" hidden>
+                    <p class="loadingText">
+                        Larger ROMs may take proportionally longer...
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner"></div>
+                    </div>
+                </section>
+                <div id="results">
+                    <div id="error"></div>
+                    <div id="result"></div>
+                    <div class="button-container">
+                    </div>
+                </div>
+            </section>
+            <div class="database-links">
+                <a href="http://redump.org/" target="_blank" rel="noopener noreferrer">Redump.org</a>
+                <span>|</span>
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24" target="_blank" rel="noopener noreferrer">No-Intro.org</a>
+            </div>
+
+        </div>
+        <div class="secundary-container">
+            <div class="images">
+                <link rel="stylesheet" href="">
+        
+                <!-- PS1 - Redump -->
+                <a href="http://redump.org/discs/system/psx/" target="_blank">
+                    <img src="../frontend/public/images/ps1.png" alt="PS1">
+                </a>
+        
+                <!-- PS2 - Redump -->
+                <a href="http://redump.org/discs/system/ps2/" target="_blank">
+                    <img src="../frontend/public/images/ps2.png" alt="PS2">
+                </a>
+        
+                <!-- PS3 - Redump -->
+                <a href="http://redump.org/discs/system/ps3/" target="_blank">
+                    <img src="../frontend/public/images/ps3.png" alt="PS3">
+                </a>
+        
+                <!-- PS4 - Redump -->
+                <a href="http://redump.org/discs/system/ps4/" target="_blank">
+                    <img src="../frontend/public/images/ps4.png" alt="PS4">
+                </a>
+        
+                <!-- PS5 - Redump -->
+                <a href="http://redump.org/discs/system/ps5/" target="_blank">
+                    <img src="../frontend/public/images/ps5.png" alt="PS5">
+                </a>
+        
+                <!-- PSP - Redump -->
+                <a href="http://redump.org/discs/system/psp/" target="_blank">
+                    <img src="../frontend/public/images/psp.png" alt="PSP">
+                </a>
+        
+                <!-- PSVita - Redump -->
+                <a href="http://redump.org/discs/system/psvita/" target="_blank">
+                    <img src="../frontend/public/images/psvita.png" alt="PSVita">
+                </a>
+        
+                <!-- SNES - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=snes" target="_blank">
+                    <img src="../frontend/public/images/snes.png" alt="SNES">
+                </a>
+        
+                <!-- Nintendo 64 - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=nintendo64" target="_blank">
+                    <img src="../frontend/public/images/nintendo64.png" alt="Nintendo 64">
+                </a>
+        
+                <!-- Wii - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=wii" target="_blank">
+                    <img src="../frontend/public/images/wii.png" alt="Wii">
+                </a>
+        
+                <!-- Wii U - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=wiiu" target="_blank">
+                    <img src="../frontend/public/images/wiiu.png" alt="Wii U">
+                </a>
+        
+                <!-- Switch - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=switch" target="_blank">
+                    <img src="../frontend/public/images/switch.png" alt="Switch">
+                </a>
+        
+                <!-- Game Boy - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=gameboy" target="_blank">
+                    <img src="../frontend/public/images/game_boy.png" alt="Game Boy">
+                </a>
+        
+                <!-- Game Boy Color - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=gameboycolor" target="_blank">
+                    <img src="../frontend/public/images/game_boy_color.png" alt="Game Boy Color">
+                </a>
+        
+                <!-- GBA - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=gba" target="_blank">
+                    <img src="../frontend/public/images/gba.png" alt="GBA">
+                </a>
+        
+                <!-- Mega Drive - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=megadrive" target="_blank">
+                    <img src="../frontend/public/images/mega_drive.png" alt="Mega Drive">
+                </a>
+        
+                <!-- Sega CD32X - Redump -->
+                <a href="http://redump.org/discs/system/sega32x/" target="_blank">
+                    <img src="../frontend/public/images/sega_cd32x.png.png" alt="Sega CD32X">
+                </a>
+        
+                <!-- Sega Saturn - Redump -->
+                <a href="http://redump.org/discs/system/segasaturn/" target="_blank">
+                    <img src="../frontend/public/images/sega_saturn.png" alt="Sega Saturn">
+                </a>
+        
+                <!-- Dreamcast - Redump -->
+                <a href="http://redump.org/discs/system/dreamcast/" target="_blank">
+                    <img src="../frontend/public/images/dreamcast.png" alt="Dreamcast">
+                </a>
+        
+                <!-- Xbox - Redump -->
+                <a href="http://redump.org/discs/system/xbox/" target="_blank">
+                    <img src="../frontend/public/images/xbox.png" alt="Xbox">
+                </a>
+        
+                <!-- Xbox 360 - Redump -->
+                <a href="http://redump.org/discs/system/xbox360/" target="_blank">
+                    <img src="../frontend/public/images/xbox360.png" alt="Xbox 360">
+                </a>
+        
+                <!-- DS - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=ds" target="_blank">
+                    <img src="../frontend/public/images/ds.png" alt="DS">
+                </a>
+        
+                <!-- 2DS - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=2ds" target="_blank">
+                    <img src="../frontend/public/images/2ds.png" alt="2DS">
+                </a>
+        
+                <!-- 3DS - No-Intro -->
+                <a href="https://datomatic.no-intro.org/index.php?page=search&s=24&system=3ds" target="_blank">
+                    <img src="../frontend/public/images/3ds.png" alt="3DS">
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts//Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'SegoeUI';
+  src: url('../fonts/SegoeUI/SEGOEUI.TTF') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+} @font-face {
+  font-family: 'SegoeUI';
+  src: url('../fonts/SegoeUI/SEGOEUIB.TTF') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url('../fonts/Arial/arial.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+} @font-face {
+  font-family: 'Arial';
+  src: url('../fonts/Arial/arial-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Karma';
+  src: url('../fonts/Karma/Karma.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Atmospheric';
+  src: url('../fonts/Atmospheric/Atmospheric-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+
+:root {
+  color-scheme: light dark;
+
+  /* BASE STANDARTS */
+  color: #f2f2f4;
+  --color: #f2f2f4;
+  --color-900: #131313;
+  /* background: linear-gradient(to right, #01000f, #01000f, #01000f, #01000f, #00122e); */
+  background: #091f4c;
+  --background: #01000f;
+
+  
+  --start-blue: linear-gradient(to right, #174f99, #1ea4da);
+  --start-green: linear-gradient(to right, #26fe96, #5eff6c);
+  --gradient-blue: linear-gradient(to right, #14488b, #1a58aa, #1d9acc);
+  --titles-steam: linear-gradient(to right, #274267, #135f92);
+
+  --add-file: #174f99;
+  --border: #ffffff2e;
+  --border-blue: #1ea4da;
+
+
+  --shadow: 5px 5px 10px #0000001a;
+  --shadow-hover: 5px 5px 10px rgba(0, 0, 0, 1.1);
+  --text-shadow: 1px 2px 10px #0000005b;
+  --text-shadow-strong: 0px 1px 5px #0000008f;
+
+  /* MAIN COLORS */
+  --primary: #3498db;
+  --primary-100: #0ab9ff;
+  --primary-200: #69c5fa;
+  --primary-300: #35abff ;
+
+  --secundary: #ffce85;
+
+  --error: #ff5479;
+  --confirm: #1cf089;
+
+
+  /* COPY RIGHT */
+  --copy: #ffffffa9;
+
+  font-family: 'Arial','SegoeUI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --copy: #ffffffa9;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/*///////////////////////////////////////////////////////////////////////////////////// Pressets */
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  outline: none;
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+.png,
+img,
+svg {
+  user-select: d;
+}
+
+/* Personaliza a barra de rolagem */
+::-webkit-scrollbar {
+  width: 3px; /* Largura da barra de rolagem */
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f100;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1a77b8; 
+  border-radius: 10px; 
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/*///////////////////////////////////////////////////////////////////////////////////// Pressets */
+
+.container {
+  max-width: 1200px;
+  min-height: calc(100vh - 50px);
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .container {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+.primary-container {
+  width: 700px;
+  height: 500px;
+  margin: 0 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur( 15px );
+  box-shadow: 0 8px 35px 0 #1f26876e;
+}
+
+.titles {
+  border-radius: 15px 15px 0 0;
+  padding: 0px 0px 0px 0px;
+  width: 700px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-image: var(--gradient-blue);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1150px;
+}@media (max-width: 600px) {
+  .center {
+    width: 100%;
+  }
+}
+
+.files {
+  margin: 20px 0px 0px 0px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/*///////////////////////////////////////////////////////////////////////////////////// Pressets */
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  margin: -1px 0 0px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: -6px;
+  font-family: 'SegoeUI';
+  font-weight: bold;
+  color: var(--primary-100);
+  text-shadow: var(--text-shadow);
+}

@@ -1,0 +1,70 @@
+#loading {
+    display: none;
+    text-align: center;
+    margin: 15px 80px 45px 80px;
+}
+
+.loadingText {
+    margin-bottom: 10px;
+    width: 480px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--confirm);
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    margin: 0px 0 0;
+    overflow: hidden; /* Garante que o conteúdo interno não ultrapasse os limites */
+    position: relative; /* Necessário para posicionar a wave */
+}
+
+.progress-bar-inner {
+    width: 0%;
+    height: 10px;
+    background-color: var(--primary-300);
+    border-radius: 1px;
+    transition: width 0.1s linear; /* Transição suave */
+    position: relative; /* Necessário para posicionar a wave */
+    overflow: hidden; /* Esconde o overflow da wave */
+}
+
+/* Efeito de wave */
+.progress-bar-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Começa fora da barra */
+    width: 200%; /* Dobro da largura para criar o efeito de movimento */
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--primary-100),
+        transparent
+    );
+    animation: wave 2s linear infinite; /* Animação contínua */
+}
+
+/* Animação da wave */
+@keyframes wave {
+    0% {
+        transform: translateX(-50%); /* Começa fora da barra */
+    }
+    100% {
+        transform: translateX(100%); /* Move o gradiente para a direita */
+    }
+}
+
+#error {
+    display: none;
+    color: var(--error);
+    font-weight: bold;
+}
+
+#result {
+    margin-top: 0px;
+    white-space: normal;
+}
