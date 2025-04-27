@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Cria o botão dinamicamente
             const copyButton = document.createElement('button');
             copyButton.id = 'copyButton';
-            copyButton.innerText = 'Copiar SHA-1';
+            copyButton.innerText = 'Copy SHA-1';
 
             // Adiciona o botão ao contêiner
             buttonContainer.appendChild(copyButton);
@@ -72,12 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 navigator.clipboard.writeText(hashSHA1).then(() => {
                     // Mudando a cor do botão para verde após a cópia
                     copyButton.classList.add('copied');
-                    copyButton.innerText = 'SHA-1 Copiado!';
+                    copyButton.innerText = 'SHA-1 Copied!';
             
                     // Reverter o estilo após 2 segundos
                     setTimeout(() => {
                         copyButton.classList.remove('copied');
-                        copyButton.innerText = 'Copiar SHA-1';
+                        copyButton.innerText = 'Copy SHA-1';
                     }, 2000);
                 });
             });
