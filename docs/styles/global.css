@@ -247,3 +247,351 @@ svg {
   color: var(--primary-100);
   text-shadow: var(--text-shadow);
 }
+
+/* Files //////////////////////////////////////////////////////////////////////////*/
+/* Contêiner para centralizar o botão */
+.file-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 600px;
+  height: 110px;
+  margin: 0;
+  padding: 35px 10px 35px;
+  border-bottom: 1px solid var(--border);
+}
+
+.file-container-left {
+  display: flex;
+  height: 110px;
+}
+
+.file-container-right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0px solid var(--border);
+  border-radius: 8px;
+  width: 420px;
+  height: 109px;
+  margin: 0 0 0 10px;
+}
+
+.romFile {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#customButton {
+  background-color: #0abaff15;
+  margin-top: 0px;
+  padding: 44px 15px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'SegoeUI';
+  text-align: center;
+  cursor: pointer;
+  text-shadow: var(--text-shadow-strong);
+  transition: background-color 0.25s ease-in-out;
+} #customButton:hover {
+  background-color: var(--add-file);
+}
+
+#fileName {
+  height: 70px;
+  margin: 10px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 2px;
+}
+
+.no-file {
+  color: #ffffffd3;
+}
+
+.file-selected {
+  color: var(--secundary);
+}
+
+.start {
+  padding: 5px 0px 7px;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color);
+  border-radius: 7px;
+  cursor: pointer;
+  margin: 0px 0 0 0;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'SegoeUI';
+  border: 1px solid var(--border-blue);
+  background-image: var(--start-blue);
+}
+
+/* links //////////////////////////////////////////////////////////////////////////*/
+.database-links {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.database-links a {
+  color: var(--primary-100);
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.database-links a:hover {
+  color: var(--primary-100);
+}
+
+.database-links span {
+  color: var(--color);
+}
+
+.copy-button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* .copy-button:hover {
+  background-color: var(--primary-100);
+} */
+
+.hash-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.secundary-container {
+  margin: 20px 0px 0px;
+  padding: 0px 20px 35px;
+  width: 960px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap; /* Permite que as imagens se ajustem automaticamente se houver mais de uma linha */
+  justify-content: space-evenly; /* Distribui as imagens uniformemente */
+  align-items: center; /* Alinha as imagens verticalmente */
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur( 15px );
+  box-shadow: 0 8px 35px 0 #1f26876e;
+}
+
+.secundary-container a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.secundary-container img {
+  width: 95px;
+  height: 100px; /* Define a altura das imagens */
+  object-fit: contain; /* Ajusta a imagem para que ela se ajuste à área de 100x100 sem distorcer */
+}
+
+/* loading //////////////////////////////////////////////////////////////////////////*/
+#loading {
+  display: none;
+  text-align: center;
+  margin: 15px 80px 45px 80px;
+}
+
+.loadingText {
+  margin-bottom: 10px;
+  width: 480px;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--confirm);
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  margin: 0px 0 0;
+  overflow: hidden; /* Garante que o conteúdo interno não ultrapasse os limites */
+  position: relative; /* Necessário para posicionar a wave */
+}
+
+.progress-bar-inner {
+  width: 0%;
+  height: 10px;
+  background-color: var(--primary-300);
+  border-radius: 1px;
+  transition: width 0.1s linear; /* Transição suave */
+  position: relative; /* Necessário para posicionar a wave */
+  overflow: hidden; /* Esconde o overflow da wave */
+}
+
+/* Efeito de wave */
+.progress-bar-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Começa fora da barra */
+  width: 200%; /* Dobro da largura para criar o efeito de movimento */
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      var(--primary-100),
+      transparent
+  );
+  animation: wave 2s linear infinite; /* Animação contínua */
+}
+
+/* Animação da wave */
+@keyframes wave {
+  0% {
+      transform: translateX(-50%); /* Começa fora da barra */
+  }
+  100% {
+      transform: translateX(100%); /* Move o gradiente para a direita */
+  }
+}
+
+#error {
+  display: none;
+  color: var(--error);
+  font-weight: bold;
+}
+
+#result {
+  margin-top: 0px;
+  white-space: normal;
+}
+
+/* results //////////////////////////////////////////////////////////////////////////*/
+.results-container {
+  margin-bottom: -10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Empilhar os itens verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  width: 620px;
+  height: 200px;
+  border-radius: 0 0 15px 15px;
+}
+
+.details {
+  color: var(--primary-200);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 8px 0;
+  padding: 0;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.detailsResult {
+  color: var(--color);
+  margin-left: 6px;
+  user-select: text;
+}
+
+.original-name {
+  max-width: 490px;
+}
+
+.console-database-version {
+  max-width: 300px;
+}
+
+#error {
+  margin: -16px 0 15px;
+}
+
+.hash-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  margin-top: 15px;
+  display: flex;           /* Flexbox para o alinhamento */
+  justify-content: center; /* Garante que o botão seja centralizado */
+  width: 100%;             /* Garante que ocupe toda a largura disponível */
+}
+
+#copyButton {
+  position: relative; /* Necessário para posicionar o ::before relativo ao botão */
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: 1px solid var(--border-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  overflow: hidden; /* Impede que o efeito ultrapasse os limites do botão */
+  z-index: 1; /* Coloca o texto à frente do efeito */
+}
+
+#copyButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Começa fora do botão */
+  width: 250%; /* O efeito de onda deve cobrir o dobro da largura do botão */
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--primary-300), transparent);
+  animation: copy 1.8s linear infinite; /* Animação contínua */
+  z-index: -1; /* Coloca o efeito atrás do texto do botão */
+}
+
+/* Animação da onda */
+@keyframes copy {
+  0% {
+      transform: translateX(-50%); /* Começa fora do botão */
+  }
+  100% {
+      transform: translateX(100%); /* Move o gradiente para a direita */
+  }
+}
+
+#copyButton.copied {
+  background-color: var(--confirm); /* Cor de fundo quando copiado */
+  color: black;
+  box-shadow: 0 0px 25px 2px rgba(28, 240, 138, 0.63); /* Efeito de iluminação verde */
+  border: 1px solid var(--confirm);
+}
+
+#copyButton.copied::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  animation: none;
+  z-index: -1;
+}
